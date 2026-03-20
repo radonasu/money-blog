@@ -2,6 +2,8 @@ title: おかねの教科書
 description: お金の知識をわかりやすく解説。節税・補助金・保険・家計管理の実践ガイド。サラリーマン・フリーランス・中小企業経営者向けに役立つお金情報を毎週更新。
 baseurl: "/money-blog"
 url: "https://radonasu.github.io"
+permalink: /:year/:month/:day/:title/
+future: true
 repository: radonasu/money-blog
 lang: ja
 
