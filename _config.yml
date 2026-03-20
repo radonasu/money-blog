@@ -38,6 +38,19 @@ twitter:
 paginate: 10
 paginate_path: "/page:num/"
 
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
 # Exclude from builds
 exclude:
   - Gemfile

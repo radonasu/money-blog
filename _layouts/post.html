@@ -1,0 +1,108 @@
+---
+layout: default
+---
+
+<article class="post-wrapper">
+  <div class="post-container">
+
+    <div class="post-main">
+      <header class="post-header">
+        <div class="post-header-meta">
+          <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y年%-m月%-d日" }}</time>
+        </div>
+        <h1 class="post-title">{{ page.title | escape }}</h1>
+        {%- if page.description -%}
+        <p class="post-description">{{ page.description }}</p>
+        {%- endif -%}
+      </header>
+
+      <div class="post-content">
+        {{ content }}
+      </div>
+
+      <div class="share-section">
+        <p class="share-label">この記事をシェアする</p>
+        <div class="share-buttons">
+          <a href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}&url={{ page.url | absolute_url | uri_escape }}"
+             class="share-btn share-x" target="_blank" rel="noopener">
+            𝕏 ポスト
+          </a>
+          <a href="https://line.me/R/msg/text/?{{ page.title | uri_escape }}%0A{{ page.url | absolute_url | uri_escape }}"
+             class="share-btn share-line" target="_blank" rel="noopener">
+            LINE
+          </a>
+          <a href="https://b.hatena.ne.jp/add?mode=confirm&url={{ page.url | absolute_url | uri_escape }}&title={{ page.title | uri_escape }}"
+             class="share-btn share-hb" target="_blank" rel="noopener">
+            B! ブックマーク
+          </a>
+        </div>
+      </div>
+
+      <nav class="post-nav">
+        <div class="post-nav-inner">
+          {%- if page.previous.url -%}
+          <a class="post-nav-item post-nav-prev" href="{{ page.previous.url | relative_url }}">
+            <span class="nav-label">← 前の記事</span>
+            <span class="nav-title">{{ page.previous.title | truncate: 40 }}</span>
+          </a>
+          {%- else -%}
+          <div></div>
+          {%- endif -%}
+          {%- if page.next.url -%}
+          <a class="post-nav-item post-nav-next" href="{{ page.next.url | relative_url }}">
+            <span class="nav-label">次の記事 →</span>
+            <span class="nav-title">{{ page.next.title | truncate: 40 }}</span>
+          </a>
+          {%- endif -%}
+        </div>
+      </nav>
+    </div>
+
+    <aside class="post-sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">📋 目次</h3>
+        <div class="toc-placeholder">
+          <p class="toc-note">この記事の見出し</p>
+          <ul class="toc-list" id="toc-list"></ul>
+        </div>
+      </div>
+
+      <div class="sidebar-widget sidebar-cta">
+        <h3 class="widget-title">💡 お役立ちツール</h3>
+        <ul class="sidebar-links">
+          <li><a href="https://www.sbi-sec.co.jp/" target="_blank" rel="noopener">SBI証券でiDeCo・NISA開設</a></li>
+          <li><a href="https://www.rakuten-sec.co.jp/" target="_blank" rel="noopener">楽天証券でNISA口座開設</a></li>
+          <li><a href="https://www.a-hoken.com/" target="_blank" rel="noopener">保険の窓口で無料相談</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">🆕 最新記事</h3>
+        <ul class="sidebar-post-list">
+          {%- for post in site.posts limit:5 -%}
+          {%- unless post.url == page.url -%}
+          <li><a href="{{ post.url | relative_url }}">{{ post.title | truncate: 35 }}</a></li>
+          {%- endunless -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+</article>
+
+<script>
+// 目次自動生成
+document.addEventListener('DOMContentLoaded', function() {
+  const headings = document.querySelectorAll('.post-content h2, .post-content h3');
+  const tocList = document.getElementById('toc-list');
+  if (!tocList || headings.length === 0) return;
+  headings.forEach(function(h, i) {
+    h.id = h.id || 'heading-' + i;
+    const li = document.createElement('li');
+    li.className = h.tagName === 'H3' ? 'toc-h3' : 'toc-h2';
+    li.innerHTML = '<a href="#' + h.id + '">' + h.textContent + '</a>';
+    tocList.appendChild(li);
+  });
+});
+</script>
