@@ -1,0 +1,49 @@
+title: おかねの教科書
+description: お金の知識をわかりやすく解説。節税・補助金・保険・家計管理の実践ガイド。サラリーマン・フリーランス・中小企業経営者向けに役立つお金情報を毎週更新。
+baseurl: ""
+url: "https://radonasu.github.io"
+repository: radonasu/money-blog
+lang: ja
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Minima theme settings
+minima:
+  skin: auto
+  social_links:
+    - { platform: twitter, user_url: "https://twitter.com/okane_kyokasho" }
+
+# Author info
+author:
+  name: おかねの教科書 編集部
+  email: ""
+
+# Feed settings
+feed:
+  posts_limit: 20
+
+# SEO settings
+twitter:
+  username: okane_kyokasho
+  card: summary
+
+# Pagination (optional)
+paginate: 10
+paginate_path: "/page:num/"
+
+# Exclude from builds
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - "*.sh"
