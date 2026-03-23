@@ -20,6 +20,10 @@ minima:
   social_links:
     - { platform: twitter, user_url: "https://twitter.com/okane_kyokasho" }
 
+# ナビに表示するページを明示的に指定（これ以外はナビに出ない）
+header_pages:
+  - about.md
+
 # Author info
 author:
   name: おかねの教科書 編集部

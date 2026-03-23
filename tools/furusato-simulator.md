@@ -185,7 +185,7 @@ permalink: /tools/furusato-simulator/
 <script>
 const fmt = n => Math.round(n).toLocaleString('ja-JP') + '円';
 
-// 給与所得控除（2026年）
+// 給与所得控除（2026年・万円単位）
 function getKyuyoKoujo(income) {
   if (income <= 162.5) return 55;
   if (income <= 180)   return income * 0.4 - 10;
@@ -195,46 +195,42 @@ function getKyuyoKoujo(income) {
   return 195;
 }
 
-// 基礎控除
-const KISO_KOUJO = 48;
-
-// 所得税率
-function getIncomeTax(taxable) {
-  if (taxable <= 195)  return taxable * 0.05;
-  if (taxable <= 330)  return taxable * 0.10 - 9.75;
-  if (taxable <= 695)  return taxable * 0.20 - 42.75;
-  if (taxable <= 900)  return taxable * 0.23 - 63.6;
-  if (taxable <= 1800) return taxable * 0.33 - 153.6;
-  if (taxable <= 4000) return taxable * 0.40 - 279.6;
-  return taxable * 0.45 - 479.6;
+// 社会保険料控除（年収から概算・万円単位）
+function getSocialInsurance(income) {
+  if (income <= 200)  return income * 0.135;
+  if (income <= 500)  return income * 0.145;
+  if (income <= 1000) return income * 0.150;
+  return Math.min(income * 0.12, 150); // 標準報酬月額に上限があるため頭打ち
 }
 
 function calcFurusato() {
   const income = parseFloat(document.getElementById('ft-income').value) || 500;
   const family = document.querySelector('input[name="family"]:checked').value;
-  const loan = document.querySelector('input[name="loan"]:checked').value;
+  const loan   = document.querySelector('input[name="loan"]:checked').value;
 
-  // 配偶者控除
+  // 配偶者控除（万円）
   const spouseKoujo = (family === 'spouse' || family === 'spouse-child1') ? 38 : 0;
 
-  // 扶養控除（16歳未満は児童手当のため扶養控除なし）
-  // 16歳未満の子は控除なし
-  const dependentKoujo = 0;
+  // 社会保険料控除（万円）
+  const socialIns = getSocialInsurance(income);
 
-  // 給与所得
+  // 給与所得（万円）
   const kyuyoShotoku = income - getKyuyoKoujo(income);
 
-  // 課税所得（所得税）
-  const taxableIncome = kyuyoShotoku - KISO_KOUJO - spouseKoujo - dependentKoujo;
+  // 住民税：課税所得（万円）= 給与所得 - 社保 - 基礎控除43 - 配偶者控除
+  const juminTaxable = Math.max(0, kyuyoShotoku - socialIns - 43 - spouseKoujo);
 
-  // 住民税所得割
-  const juminTaxable = kyuyoShotoku - 43 - spouseKoujo - dependentKoujo; // 住民税基礎控除43万
+  // 所得税：課税所得（万円）= 給与所得 - 社保 - 基礎控除48 - 配偶者控除
+  const taxableIncome = Math.max(0, kyuyoShotoku - socialIns - 48 - spouseKoujo);
 
-  // 住宅ローン控除影響
+  // 住宅ローン控除による住民税所得割の減額（万円）
   let loanDeduction = 0;
-  if (loan === 'low') loanDeduction = 5;
-  else if (loan === 'mid') loanDeduction = 15;
+  if (loan === 'low')  loanDeduction = 5;
+  else if (loan === 'mid')  loanDeduction = 15;
   else if (loan === 'high') loanDeduction = 25;
+
+  // 住民税所得割（万円）= 課税所得 × 10%、住宅ローン控除分を差し引く
+  const juminTaxAmount = Math.max(0, juminTaxable * 0.1 - loanDeduction);
 
   // 所得税率
   let incomeTaxRate = 0.05;
@@ -243,18 +239,15 @@ function calcFurusato() {
   if (taxableIncome > 695) incomeTaxRate = 0.23;
   if (taxableIncome > 900) incomeTaxRate = 0.33;
 
-  // 住民税所得割 = 課税所得 × 10%（概算）
-  const juminTax = Math.max(0, juminTaxable * 10 - loanDeduction * 10000) * 10000;
-
-  // ふるさと納税上限額の計算
-  // 上限 = (住民税所得割 × 0.2) / (0.9 - 所得税率 × 1.021) + 2000
+  // ふるさと納税上限額（万円）
+  // 上限 = 住民税所得割(万) × 0.2 ÷ (0.9 - 所得税率 × 1.021) + 0.2万円(=2,000円)
   const denominator = 0.9 - incomeTaxRate * 1.021;
-  const limitRaw = (juminTaxable * 10 * 0.2) / denominator + 0.2;
-  const limit = Math.max(0, Math.round(limitRaw * 10000 / 1000) * 1000);
+  const limitMan = juminTaxAmount * 0.2 / denominator + 0.2;
+  const limit = Math.max(0, Math.round(limitMan * 10000 / 1000) * 1000); // 円・千円単位
 
-  // 控除内訳
+  // 控除内訳（円）
   const shotokuReturn = Math.round(limit * incomeTaxRate * 1.021);
-  const juminReturn = limit - 2000 - shotokuReturn;
+  const juminReturn   = Math.max(0, limit - 2000 - shotokuReturn);
 
   const recommend = Math.round(limit * 0.9 / 1000) * 1000;
   const returnPct = limit > 0 ? Math.round((limit - 2000) / limit * 100) : 98;
@@ -262,7 +255,7 @@ function calcFurusato() {
   document.getElementById('ft-limit').textContent = fmt(limit);
   document.getElementById('ft-burden').textContent = '2,000円（' + fmt(limit) + '寄付した場合）';
   document.getElementById('ft-recommend').textContent = fmt(recommend);
-  document.getElementById('ft-jumin').textContent = fmt(Math.max(0, juminReturn));
+  document.getElementById('ft-jumin').textContent = fmt(juminReturn);
   document.getElementById('ft-shotoku').textContent = fmt(Math.max(0, shotokuReturn));
   document.getElementById('fv-donation-label').textContent = fmt(limit);
   document.getElementById('fv-return-label').textContent = fmt(Math.max(0, limit - 2000)) + ' 戻る';
