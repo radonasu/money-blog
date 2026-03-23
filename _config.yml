@@ -25,9 +25,7 @@ header_pages:
   - about.md
 
 # Author info
-author:
-  name: おかねの教科書 編集部
-  email: ""
+author: おかねの教科書 編集部
 
 # Feed settings
 feed:
