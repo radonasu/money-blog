@@ -36,10 +36,6 @@ twitter:
   username: okane_kyokasho
   card: summary
 
-# Pagination (optional)
-paginate: 10
-paginate_path: "/page:num/"
-
 # Default layouts
 defaults:
   - scope:
