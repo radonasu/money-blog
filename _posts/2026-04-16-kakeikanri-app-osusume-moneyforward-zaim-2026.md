@@ -5,6 +5,7 @@ date: 2026-04-16
 categories: [家計管理, 節約, アプリ]
 tags: [家計管理アプリ, マネーフォワード, Zaim, 節約, 支出管理]
 description: "家計管理アプリのおすすめを2026年版で徹底比較。マネーフォワードME・Zaim・OsidOriの機能・料金・使いやすさを比較。月3万円の節約に直結するアプリ選びを解説。"
+primary_category: setsuyaku
 ---
 
 # 家計管理 アプリ おすすめ 2026【マネーフォワード・Zaim・OsidOri 完全比較】

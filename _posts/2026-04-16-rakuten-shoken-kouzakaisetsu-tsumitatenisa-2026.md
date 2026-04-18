@@ -5,6 +5,7 @@ description: "楽天証券の口座開設からつみたてNISA・新NISA開始�
 date: 2026-04-16
 categories: [証券口座, 投資入門]
 tags: [楽天証券, 口座開設, つみたてNISA, 新NISA, 楽天カード積立]
+primary_category: toushi
 ---
 
 # 楽天証券 口座開設 やり方 2026【最速10分・つみたてNISA開始まで全手順図解】

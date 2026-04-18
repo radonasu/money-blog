@@ -4,6 +4,7 @@ title: "新NISA vs iDeCo どちらを先に始めるべきか【2026年版・年
 date: 2026-03-22
 categories: [投資, 節税]
 description: "新NISAとiDeCoの違いを徹底比較。年収・目的別にどちらを先に始めるべきか、シミュレーション付きで解説します。"
+primary_category: toushi
 ---
 
 新NISAとiDeCo、どちらも「税制優遇がある投資制度」として人気ですが、「どちらを先に始めるべきか」と迷っている方は多いはずです。

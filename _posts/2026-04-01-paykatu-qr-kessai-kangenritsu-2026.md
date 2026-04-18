@@ -4,6 +4,7 @@ title: "ペイ活 QRコード決済 還元率比較 2026【PayPay・楽天ペイ
 date: 2026-04-01
 categories: [節約, キャッシュレス]
 description: "PayPay・楽天ペイ・d払い・au PAYの還元率をシーン別に徹底比較。ペイ活で年間3〜5万円お得にするための最強組み合わせを2026年版で解説します。"
+primary_category: setsuyaku
 ---
 
 ## QRコード決済のペイ活で年間いくら得できるか？

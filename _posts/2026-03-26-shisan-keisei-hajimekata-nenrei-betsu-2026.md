@@ -5,6 +5,7 @@ date: 2026-03-26
 categories: [money, investment]
 tags: [資産形成, 投資, NISA, iDeCo, 20代, 30代, 40代, お金の勉強]
 description: "資産形成の始め方を年齢別（20代・30代・40代）に解説。NISA・iDeCo・インデックス投資の始め方から、月3万円で資産1,000万円を作るロードマップまで2026年版で徹底ガイド。"
+primary_category: setsuyaku
 ---
 
 # 資産形成の始め方完全ガイド【20代・30代・40代別のステップ2026年版】

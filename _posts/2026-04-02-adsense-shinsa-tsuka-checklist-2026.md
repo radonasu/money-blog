@@ -4,6 +4,7 @@ title: "Google AdSense審査を一発で通過するための完全チェック�
 date: 2026-04-02
 categories: [副業, ブログ収益化, AdSense]
 description: "Google AdSense審査を確実に通過するための完全チェックリストを公開。コンテンツ品質・サイト構成・必須ページ・NG行為まで、2026年最新情報をもとに解説します。"
+primary_category: setsuyaku
 ---
 
 ## AdSense審査は「準備した人だけが通過できる」

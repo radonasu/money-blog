@@ -4,6 +4,7 @@ title: "海外ETF・インデックス投資で資産形成する方法2026【�
 date: 2026-03-17
 categories: [投資, 資産形成]
 description: "2026年版・海外ETFとインデックス投資の始め方を解説。SBI・楽天証券でのNISA活用、特定口座との使い分け、おすすめ銘柄TOP5まで初心者向けに徹底ガイド。"
+primary_category: toushi
 ---
 
 ## なぜ今、海外ETF・インデックス投資なのか

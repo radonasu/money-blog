@@ -5,6 +5,7 @@ date: 2026-04-05
 categories: [投資, NISA]
 tags: [つみたてNISA, 新NISA, 積立投資, 投資信託, 初心者]
 description: "つみたてNISA（新NISA つみたて投資枠）の始め方・銘柄選びを初心者向けに完全解説。2026年版・年間120万円枠を最大活用するコツと、おすすめ銘柄TOP5を紹介。"
+primary_category: toushi
 ---
 
 # つみたてNISA（新NISA つみたて投資枠）初心者ガイド【2026年版・銘柄選び完全解説】

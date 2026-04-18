@@ -5,6 +5,7 @@ description: "株主優待で食費・外食費・日用品費を大幅削減！
 date: 2026-03-28
 categories: [投資, 節約, 株主優待]
 tags: [株主優待, 節約投資, 高配当株, 長期投資, 生活費削減]
+primary_category: setsuyaku
 ---
 
 ## 株主優待で「年間10万円分」を実質タダにする方法

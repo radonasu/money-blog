@@ -5,6 +5,7 @@ description: "老後に月いくら必要か、年金だけで暮らせるか徹
 date: 2026-04-12
 categories: [老後・年金, 節税・節約]
 tags: [老後資金, 生活費, 年金, シミュレーション, iDeCo, NISA]
+primary_category: toushi
 ---
 
 # 老後の生活費2026【年金だけで暮らせる？月いくら必要か完全シミュレーション】

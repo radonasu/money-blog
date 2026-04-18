@@ -4,6 +4,7 @@ title: "つみたてNISA vs 新NISA つみたて投資枠【どっちで何を�
 date: 2026-03-23
 categories: [投資, NISA]
 description: "旧つみたてNISAと新NISAつみたて投資枠の違いを徹底比較。2026年から始めるなら新NISAが正解。具体的な銘柄選び・積立設定まで解説します。"
+primary_category: toushi
 ---
 
 ## つみたてNISA vs 新NISA つみたて投資枠：何が変わったか

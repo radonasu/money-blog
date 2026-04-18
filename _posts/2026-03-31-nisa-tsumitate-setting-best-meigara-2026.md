@@ -5,6 +5,7 @@ date: 2026-03-31
 categories: [投資, NISA]
 tags: [新NISA, 積立投資, インデックスファンド, eMAXIS Slim, 全世界株式, S&P500, 資産運用]
 description: "新NISAの積立設定を詳しく解説。2026年版おすすめ銘柄（eMAXIS Slim・楽天オールカントリー等）と年代別・目標別の最適配分比率、設定手順をわかりやすく解説します。"
+primary_category: toushi
 ---
 
 「新NISAを始めたけど、何を買えばいいかわからない」。

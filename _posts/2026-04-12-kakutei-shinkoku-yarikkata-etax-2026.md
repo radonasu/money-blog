@@ -5,6 +5,7 @@ description: "確定申告のやり方を初心者向けに完全解説。e-Tax�
 date: 2026-04-12
 categories: [節税・節約, 確定申告]
 tags: [確定申告, e-Tax, 還付金, 副業, フリーランス, スマホ申告]
+primary_category: fukugyo
 ---
 
 # 確定申告 やり方 2026【e-Tax・スマホ申告の完全ガイド・初心者向けステップバイステップ】

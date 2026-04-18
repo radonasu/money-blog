@@ -5,6 +5,7 @@ description: "SBI証券の口座開設からiDeCo・新NISA開始まで2026年�
 date: 2026-04-17
 categories: [証券口座, 投資入門]
 tags: [SBI証券, 口座開設, iDeCo, 新NISA, 三井住友カード積立]
+primary_category: toushi
 ---
 
 # SBI証券 口座開設 やり方 2026【iDeCo・新NISA対応・審査から入金まで完全ガイド】

@@ -4,6 +4,7 @@ title: "Xで節約・投資情報を発信してフォロワーを増やす方�
 date: 2026-04-02
 categories: [副業, SNS活用, 資産形成]
 description: "X（Twitter）でお金の情報を発信してフォロワーを増やすコツを解説。節約・投資・NISA・iDeCoに関する投稿テンプレート30選と、1日15分で回せる運用フローを紹介します。"
+primary_category: toushi
 ---
 
 ## X（Twitter）でお金情報を発信する人が急増している理由

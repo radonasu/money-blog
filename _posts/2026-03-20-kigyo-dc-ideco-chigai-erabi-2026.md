@@ -4,6 +4,7 @@ title: "企業型確定拠出年金（DC）とiDeCoの違いと選び方【2026�
 date: 2026-03-20
 categories: [節税, 老後資金, 投資]
 description: "企業型DCとiDeCoの違いを徹底比較。2024年制度改正でiDeCo加入条件が大幅緩和。年収・勤務先別の最適な組み合わせと節税額シミュレーションを解説。"
+primary_category: toushi
 ---
 
 「会社に企業型DCがあるけど、iDeCoも使えるの？」

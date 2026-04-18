@@ -4,6 +4,7 @@ title: "FIRE計算 2026【早期退職のための資産形成シミュレーシ
 date: 2026-04-07
 categories: [FIRE, 資産形成, 投資]
 description: "FIRE（経済的自立・早期退職）に必要な資産額の計算方法と、30代・40代別の達成ロードマップ、新NISA活用の最短ルートを2026年版で完全解説します。"
+primary_category: setsuyaku
 ---
 
 FIRE（Financial Independence, Retire Early）という言葉を聞いたことがあるでしょうか。「経済的自立を達成し、早期退職する」という生き方で、2026年現在、日本でも30代・40代のビジネスパーソンを中心に注目を集めています。

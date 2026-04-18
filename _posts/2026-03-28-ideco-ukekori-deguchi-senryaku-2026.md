@@ -5,6 +5,7 @@ description: "iDeCoの受け取り方で税金が大きく変わります。退�
 date: 2026-03-28
 categories: [節税, iDeCo, 老後資金]
 tags: [iDeCo, 受け取り方, 出口戦略, 退職金, 節税, 確定申告]
+primary_category: toushi
 ---
 
 ## iDeCoの「受け取り方」で税金が100万円以上変わる

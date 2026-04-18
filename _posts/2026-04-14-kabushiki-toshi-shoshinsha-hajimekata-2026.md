@@ -5,6 +5,7 @@ description: "株式投資の始め方を初心者向けに完全解説。証券
 date: 2026-04-14
 categories: [投資・NISA, 株式投資]
 tags: [株式投資, 初心者, 証券口座, 新NISA, インデックス投資, SBI証券, 楽天証券]
+primary_category: toushi
 ---
 
 # 株式投資 初心者 始め方 2026【証券口座開設から最初の1株購入まで完全ガイド】

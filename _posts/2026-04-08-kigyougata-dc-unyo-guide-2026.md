@@ -5,6 +5,7 @@ date: 2026-04-08
 categories: [投資, 老後資金]
 tags: [企業型DC, 確定拠出年金, iDeCo, NISA, 老後資金, 節税]
 description: "企業型DC（確定拠ouwd年金）の運用商品選び・掛金変更・iDeCoとの違いを2026年最新版で解説。放置でOKな銘柄選びと節税最大化の方法を紹介。"
+primary_category: toushi
 ---
 
 # 確定拠出年金（企業型DC）2026【掛金変更・運用商品選びの完全ガイド】

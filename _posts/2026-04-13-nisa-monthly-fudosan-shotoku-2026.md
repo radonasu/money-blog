@@ -5,6 +5,7 @@ description: "新NISAを活用して月5万円の不労所得（配当収入）�
 date: 2026-04-13
 categories: [投資・NISA, 不労所得]
 tags: [新NISA, 不労所得, 配当株, インデックス投資, 月5万円, 成長投資枠]
+primary_category: toushi
 ---
 
 # 新NISAで月5万円の不労所得を作る方法【2026年版・配当株・インデックス投資の組み合わせ】
