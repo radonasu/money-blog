@@ -64,7 +64,7 @@ iDeCo（個人型確定拠出年金）の掛金は**全額所得控除**にな�
 - 住民税削減効果: 約2.8万円/年
 - **合計節税: 約8.3万円/年**
 
-[iDeCoの詳しい解説はこちら → iDeCo節税シミュレーション完全ガイド]({% post_url 2026-03-14-ideco-setsuzei-simulation %})
+[iDeCoの詳しい解説はこちら → iDeCo節税シミュレーション完全ガイド]({% post_url 2026-03-10-ideco-setsuzei-simulation %})
 
 ---
 
