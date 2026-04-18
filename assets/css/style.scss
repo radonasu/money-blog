@@ -133,15 +133,42 @@ a:hover { color: var(--accent); }
    Hero Section
 =========================== */
 .hero-section {
-  background: linear-gradient(135deg, var(--bg-dark) 0%, #1e3a5f 60%, #1a6bb5 100%);
-  padding: 64px 20px 56px;
+  background:
+    radial-gradient(ellipse at top left, rgba(245,158,11,0.18) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(26,107,181,0.35) 0%, transparent 55%),
+    linear-gradient(135deg, #0b1e36 0%, #1e3a5f 55%, #1a6bb5 100%);
+  padding: 72px 20px 64px;
   text-align: center;
   margin-bottom: 0;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
+    background-size: 24px 24px;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -1px;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, var(--bg-soft));
+    pointer-events: none;
+  }
 }
 
 .hero-inner {
-  max-width: 700px;
+  max-width: 720px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-badge {
@@ -181,19 +208,37 @@ a:hover { color: var(--accent); }
 .hero-stats {
   display: flex;
   justify-content: center;
-  gap: 32px;
+  gap: 14px;
+  flex-wrap: wrap;
 
   .hero-stat {
-    color: rgba(255,255,255,0.8);
-    font-size: 14px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 14px;
+    padding: 14px 22px;
+    color: rgba(255,255,255,0.85);
+    font-size: 13px;
     text-align: center;
+    min-width: 110px;
+    backdrop-filter: blur(6px);
+    transition: transform 0.2s, background 0.2s;
+
+    &:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.14);
+    }
 
     strong {
       display: block;
-      font-size: 26px;
-      font-weight: 700;
+      font-size: 28px;
+      font-weight: 800;
       color: #fff;
-      line-height: 1.2;
+      line-height: 1.15;
+      margin-bottom: 2px;
+      background: linear-gradient(135deg, #fff 0%, #fcd34d 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 }
@@ -209,13 +254,25 @@ a:hover { color: var(--accent); }
 }
 
 .section-title {
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 22px;
+  font-weight: 800;
   color: var(--text);
-  margin-bottom: 24px;
-  padding-bottom: 10px;
-  border-bottom: 3px solid var(--accent);
+  margin-bottom: 28px;
+  padding-bottom: 12px;
   display: inline-block;
+  position: relative;
+  letter-spacing: -0.3px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-mid) 60%, var(--gold) 100%);
+    border-radius: 3px;
+  }
 }
 
 /* ===========================
@@ -230,22 +287,40 @@ a:hover { color: var(--accent); }
 .category-card {
   display: block;
   background: var(--bg);
-  border-radius: var(--radius);
-  padding: 20px;
+  border-radius: var(--radius-lg);
+  padding: 22px 20px;
   text-decoration: none !important;
   border: 1px solid var(--border);
-  transition: transform 0.18s, box-shadow 0.18s;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(26,107,181,0.04) 100%);
+    opacity: 0;
+    transition: opacity 0.25s;
+    pointer-events: none;
+  }
 
   &:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
     text-decoration: none;
+    border-color: transparent;
+
+    &::before { opacity: 1; }
+
+    .category-icon { transform: scale(1.15) rotate(-4deg); }
   }
 
   .category-icon {
-    font-size: 28px;
+    font-size: 32px;
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.25s ease;
   }
 
   .category-name {
@@ -262,12 +337,12 @@ a:hover { color: var(--accent); }
     line-height: 1.5;
   }
 
-  &.cat-blue    { border-top: 3px solid var(--accent-mid); }
-  &.cat-green   { border-top: 3px solid var(--green); }
-  &.cat-orange  { border-top: 3px solid var(--gold); }
-  &.cat-purple  { border-top: 3px solid var(--purple); }
-  &.cat-red     { border-top: 3px solid var(--red); }
-  &.cat-teal    { border-top: 3px solid var(--teal); }
+  &.cat-blue    { border-top: 4px solid var(--accent-mid); }
+  &.cat-green   { border-top: 4px solid var(--green); }
+  &.cat-orange  { border-top: 4px solid var(--gold); }
+  &.cat-purple  { border-top: 4px solid var(--purple); }
+  &.cat-red     { border-top: 4px solid var(--red); }
+  &.cat-teal    { border-top: 4px solid var(--teal); }
 }
 
 /* ===========================
@@ -288,20 +363,35 @@ a:hover { color: var(--accent); }
 .tool-card {
   display: flex;
   align-items: center;
-  gap: 16px;
-  background: var(--bg);
+  gap: 18px;
+  background: linear-gradient(135deg, #fff 0%, var(--green-light) 100%);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 18px 22px;
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
   text-decoration: none !important;
-  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
   border-left: 4px solid var(--green);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 140px;
+    height: 200%;
+    background: radial-gradient(ellipse, rgba(22,163,74,0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
 
   &:hover {
-    transform: translateX(4px);
-    box-shadow: var(--shadow);
+    transform: translateX(6px);
+    box-shadow: var(--shadow-lg);
     border-color: var(--green);
     text-decoration: none;
+
+    .tool-card-arrow { transform: translateX(4px); }
   }
 }
 
@@ -327,10 +417,11 @@ a:hover { color: var(--accent); }
 }
 
 .tool-card-arrow {
-  font-size: 18px;
+  font-size: 20px;
   color: var(--green);
   font-weight: 700;
   flex-shrink: 0;
+  transition: transform 0.22s ease;
 }
 
 /* ===========================
@@ -344,41 +435,82 @@ a:hover { color: var(--accent); }
 
 .post-card {
   background: var(--bg);
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
   border: 1px solid var(--border);
   overflow: hidden;
-  transition: transform 0.18s, box-shadow 0.18s;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-mid) 0%, var(--gold) 100%);
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
 
   &:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow);
-    border-color: var(--accent-mid);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: transparent;
+
+    &::before { opacity: 1; }
+    .post-card-link { color: var(--accent); letter-spacing: 0.3px; }
   }
 }
 
 .post-card-inner {
-  padding: 22px 24px;
+  padding: 24px 24px 22px;
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
 .post-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 12px;
   color: var(--text-light);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+
+  time {
+    background: var(--bg-soft);
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-weight: 600;
+    color: var(--text-mid);
+    font-size: 11.5px;
+  }
+}
+
+.post-card-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-mid) 100%);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
 }
 
 .post-card-title {
-  font-size: 16px;
+  font-size: 16.5px;
   font-weight: 700;
-  line-height: 1.5;
+  line-height: 1.55;
   margin: 0 0 10px;
   flex-grow: 1;
+  letter-spacing: -0.2px;
 
   a {
     color: var(--text);
     text-decoration: none;
+    transition: color 0.2s;
 
     &:hover { color: var(--accent-mid); }
   }
@@ -387,16 +519,17 @@ a:hover { color: var(--accent); }
 .post-card-excerpt {
   font-size: 13px;
   color: var(--text-mid);
-  line-height: 1.6;
-  margin: 0 0 14px;
+  line-height: 1.7;
+  margin: 0 0 16px;
 }
 
 .post-card-link {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--accent-mid);
   text-decoration: none;
   margin-top: auto;
+  transition: color 0.2s, letter-spacing 0.2s;
 
   &:hover { color: var(--accent); text-decoration: underline; }
 }

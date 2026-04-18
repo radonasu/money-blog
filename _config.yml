@@ -3,7 +3,7 @@ description: お金の知識をわかりやすく解説。節税・補助金・�
 baseurl: "/money-blog"
 url: "https://radonasu.github.io"
 permalink: /:year/:month/:day/:title/
-future: true
+future: false
 repository: radonasu/money-blog
 lang: ja
 
